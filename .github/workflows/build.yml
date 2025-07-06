@@ -45,11 +45,11 @@ jobs:
           cmp --silent txt/longterm.txt /tmp/longterm.txt && cmp --silent txt/mainline.txt /tmp/mainline.txt && cmp --silent txt/stable.txt /tmp/stable.txt && echo "skip=true" >> $GITHUB_OUTPUT || echo "skip=false" >> $GITHUB_OUTPUT
       - name: Commit and Push Changes
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.compare.outputs.skip != 'true' }}
         run: |
-          git config user.name "XXTXTOP"
-          git config user.email "xxtxtop@gmail.com"
+          git config user.name "xumouren5033"
+          git config user.email "20290786@qq.com"
           ls -al
           pwd
           cp /tmp/mainline.txt  txt/mainline.txt
